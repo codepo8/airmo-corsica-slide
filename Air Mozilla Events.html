@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head> 
+		<title>Air Mozilla Events</title> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+		<meta http-equiv="refresh" content="3600">
+		<link rel="stylesheet" type="text/css" href="Air%20Mozilla%20Events_files/slide.css">		
+		<script src="Air%20Mozilla%20Events_files/walltime-data.js"></script>
+		<script src="Air%20Mozilla%20Events_files/walltime.js"></script>
+		<script type="text/javascript" src="Air%20Mozilla%20Events_files/ical_parser.js"></script>
+		<script type="text/javascript">
+		
+			var ical_file = 'https://air.mozilla.org/calendar/company.ics';
+							   
+			var daycount = 999;  //number of days of events to show
+			
+			//run ical parser on load
+			window.addEventListener("load", function(){
+				//Create new ical parser
+				new ical_parser(ical_file, function(cal){
+					//When ical parser has loaded file
+					//get n days of future events
+					events = cal.getFutureEvents(daycount);
+					//And display them
+					displayDemo(events);
+				});			
+			}, false);
+			
+			
+			//Display All future events in ical file as list.
+			function displayDemo(events){
+				//Foreach event
+				events.forEach(function(event){
+					//Create a list item
+					var li = document.createElement('li');
+					//Add details from cal file.
+					var UTCday = event.day != event.pacific_day ? "("+event.day+")" : "";
+					
+					li.innerHTML = event.pacific_day+' ('+ event.pacific_start_date + ') <br/>' +  
+					event.pacific_start_time+' Pacific / '+event.eastern_start_time+' Eastern / '+event.start_time+" UTC "+UTCday+"<br/>"+
+					'<strong>' + event.SUMMARY + '</strong><br/> ' +
+					event.DESCRIPTION.replace(/\\/g, '') + '<br/> ' +
+					'Originating from ' +  event.LOCATION + '<br/> ';
+					//Add list item to list.
+					document.getElementById('calendar').appendChild(li);	
+				});
+			}
+		</script>
+	</head> 
+	<body> 
+		<div id="title">Coming Up on Air Mozilla</div>  
+        
+			<div id="container">
+				<div class="text">
+					<ul id="calendar"><li>Tuesday (20 MAY 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Tuesday (20 MAY 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Wednesday (21 MAY 2014) <br>09:30 Pacific / 12:30 Eastern / 16:30 UTC <br><strong>Town Hall - 2014 Goal: Add Services to our Product Lines (Account</strong><br> Join Mark Mayo and a few of his friends to learn more about the Services goalServices)<br> Originating from SFO Commons<br> </li><li>Wednesday (21 MAY 2014) <br>10:30 Pacific / 13:30 Eastern / 17:30 UTC <br><strong>The SUMO Mobile Meeting</strong><br> The weekly SUMO meeting for all things mobile.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Wednesday (21 MAY 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Guaranteeing memory safety in Rust</strong><br> Join Nicholas Matsakis discusses the basics of Rust, with anemphasis on the type system.<br> Originating from SFO Commons<br> </li><li>Thursday (22 MAY 2014) <br>09:00 Pacific / 12:00 Eastern / 16:00 UTC <br><strong>Manager Hacking presents: Finance Deep Dive</strong><br> Following on our first financial discussion, come explore theactivity and key metrics of a few line items.<br> Originating from Mountain View Commons<br> </li><li>Thursday (22 MAY 2014) <br>15:00 Pacific / 18:00 Eastern / 22:00 UTC <br><strong>SoK: Automated Software Diversity</strong><br>
+ Per Larsen and Andrei Homescu present their research results on 
+automatic software diversity.  A survey of the state-of-the-art in 
+software diversity and a discussion of fundamental trade-offs between 
+the approaches.<br> Originating from Mountain View Commons<br> </li><li>Monday (26 MAY 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Mozilla Weekly Project Meeting</strong><br> The Monday Project Meeting<br> Originating from Mountain View Commons<br> </li><li>Tuesday (27 MAY 2014) <br>09:30 Pacific / 12:30 Eastern / 16:30 UTC <br><strong>Mofo Staff Call May</strong><br> MoFo Staff Call: intros, updates, demos<br> Originating from Toronto Commons<br> </li><li>Tuesday (27 MAY 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Wednesday (28 MAY 2014) <br>07:00 Pacific / 10:00 Eastern / 14:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Wednesday (28 MAY 2014) <br>10:00 Pacific / 13:00 Eastern / 17:00 UTC <br><strong>The SUMO Mobile Meeting</strong><br> The weekly SUMO meeting for all things mobile.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Thursday (29 MAY 2014) <br>10:00 Pacific / 13:00 Eastern / 17:00 UTC <br><strong>Community Building Forum</strong><br> The Grow Mozilla Community Building Forum<br> Originating from Cyberspace - Pacific Time<br> </li><li>Tuesday (3 JUN 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Wednesday (4 JUN 2014) <br>10:30 Pacific / 13:30 Eastern / 17:30 UTC <br><strong>The SUMO Mobile Meeting</strong><br> The weekly SUMO meeting for all things mobile.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Tuesday (10 JUN 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Tuesday (10 JUN 2014) <br>19:30 Pacific / 22:30 Eastern / 02:30 UTC <br><strong>PostgreSQL &amp; SF Python Joint User Group Meetup</strong><br>
+ Peter Bengtsson will be explaining Crontabber to us at this special 
+meetup, which will be shared with the San Francisco Python User Group.  
+  The meetup is sponsored and hosted by Mozilla.com.<br> Originating from SFO Commons<br> </li><li>Wednesday (11 JUN 2014) <br>10:30 Pacific / 13:30 Eastern / 17:30 UTC <br><strong>The SUMO Mobile Meeting</strong><br> The weekly SUMO meeting for all things mobile.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Monday (16 JUN 2014) <br>09:30 Pacific / 12:30 Eastern / 16:30 UTC <br><strong>MoFo Staff Call June</strong><br> MoFo Staff Meeting: intros, updates, demos<br> Originating from Toronto Commons<br> </li><li>Tuesday (17 JUN 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Tuesday (17 JUN 2014) <br>12:00 Pacific / 15:00 Eastern / 19:00 UTC <br><strong>Apps Day</strong><br> Quarterly Apps Day<br> Originating from Mountain View Commons<br> </li><li>Wednesday (18 JUN 2014) <br>09:00 Pacific / 12:00 Eastern / 16:00 UTC <br><strong>Apps Day</strong><br> Quarterly Apps Day<br> Originating from Mountain View Commons<br> </li><li>Tuesday (24 JUN 2014) <br>11:00 Pacific / 14:00 Eastern / 18:00 UTC <br><strong>Engineering Meeting</strong><br> The weekly Mozilla engineering meeting.<br> Originating from Cyberspace - Pacific Time<br> </li><li>Wednesday (25 JUN 2014) <br>07:00 Pacific / 10:00 Eastern / 14:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Monday (21 JUL 2014) <br>09:30 Pacific / 12:30 Eastern / 16:30 UTC <br><strong>MoFo Staff Call July</strong><br> MoFo Staff Call: intros, updates, demos<br> Originating from Toronto Commons<br> </li><li>Wednesday (23 JUL 2014) <br>07:00 Pacific / 10:00 Eastern / 14:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Tuesday (29 JUL 2014) <br>12:00 Pacific / 15:00 Eastern / 19:00 UTC <br><strong>Financial Update - Q3</strong><br> Join Jim Cook, Mozilla's Chief Financial Officer, for the quarterly Mozilla Financial Update.<br> Originating from MTV - 10 Forward<br> </li><li>Tuesday (26 AUG 2014) <br>17:00 Pacific / 20:00 Eastern / 00:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Monday (8 SEP 2014) <br>09:30 Pacific / 12:30 Eastern / 16:30 UTC <br><strong>MoFo Staff Call September</strong><br> MoFo Staff Call: intros, updates demos<br> Originating from Toronto Commons<br> </li><li>Tuesday (23 SEP 2014) <br>17:00 Pacific / 20:00 Eastern / 00:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Monday (6 OCT 2014) <br>09:30 Pacific / 12:30 Eastern / 16:30 UTC <br><strong>MoFo Staff Call October</strong><br> MoFo Staff Call: intros, updates, demos<br> Originating from Toronto Commons<br> </li><li>Tuesday (21 OCT 2014) <br>10:00 Pacific / 13:00 Eastern / 17:00 UTC <br><strong>Financial Update - Q4</strong><br> Join Jim Cook, Mozilla's Chief Financial Officer, for the quarterly Mozilla Financial Update.<br> Originating from MTV - 10 Forward<br> </li><li>Wednesday (22 OCT 2014) <br>07:00 Pacific / 10:00 Eastern / 14:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Saturday (15 NOV 2014) <br>06:00 Pacific / 09:00 Eastern / 14:00 UTC <br><strong>Bugzilla Development Meeting</strong><br> Help define, plan, design, and implement Bugzilla's future!<br> Originating from Cyberspace - UTC<br> </li><li>Monday (17 NOV 2014) <br>09:30 Pacific / 12:30 Eastern / 17:30 UTC <br><strong>MoFo Staff Call November</strong><br> MoFo Staff Call November: intros, updates, demos<br> Originating from Toronto Commons<br> </li><li>Monday (15 DEC 2014) <br>09:30 Pacific / 12:30 Eastern / 17:30 UTC <br><strong>MoFo Staff Call December</strong><br> MoFo Staff Call: intros, updates, demos<br> Originating from Toronto Commons<br> </li></ul>
+				</div>
+			</div>
+       
+	 
+ </body></html>

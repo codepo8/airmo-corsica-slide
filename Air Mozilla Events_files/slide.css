@@ -1,0 +1,109 @@
+body {
+	background-image: url("./FirefoxBkg.gif");
+	background-size: 100vw 100vh;
+	background-position: left top;
+}
+
+
+strong {
+	font-weight: 700;
+	font-size: 5vh;
+}
+
+
+#calendar li { 
+	padding: 6px;
+	margin: 8px 0;  
+	list-style: none;
+	width: 55vw;
+	font-size: 4vh;
+}
+			
+#title { 
+	
+	position: fixed;
+	width: 62.5vw;
+	margin-top: 8.3vh;
+	margin-left: 0;
+	background-color: transparent;
+	color: rgb(0,0,0);
+	font-family: MetaBold,Trebuchet MS,sans-serif;
+	font-size: 8vh;
+	font-weight: 700;
+	text-align: center;
+}
+
+
+#container{
+	position: fixed;
+	left: 5vw;
+	top: 25.5vh;
+	overflow:hidden;
+	width:65vw;
+	height:49.4vh;
+	margin:auto;
+	background-color: transparent;
+}
+
+
+.text{
+	height:100%;
+	position:relative;
+	top:0px;
+	font-size:1vh;
+	-moz-animation: textmoveup 60s linear 2s infinite;
+	-webkit-animation: textmoveup 60s linear 2s infinite;
+	margin-left: 5vw ;
+	padding:4px 4px 4px 4px; 
+}
+
+
+
+@-moz-keyframes textmoveup {
+	0%{top:0px;}
+	5%{top:-106px;}
+	10%{top:-212px;}
+	15%{top:-318px;}
+	20%{top:-424px;}
+	25%{top:-530px;}
+	30%{top:-636px;}
+	35%{top:-742px;}
+	40%{top:-848px;}
+	45%{top:-954px;}
+	50%{top:-1060px;}
+	55%{top:-1166px;}
+	60%{top:-1272px;}
+	65%{top:-1378px;}
+	70%{top:-1482px;}
+	75%{top:-1590px;}
+	80%{top:-1696px;}
+	85%{top:-1802px;}
+	90%{top:-1908px;}
+	95%{top:-2014px;}
+	100%{top:-2140px;}  
+}
+
+@-webkit-keyframes textmoveup {
+	0%{top:0px;}
+	5%{top:-106px;}
+	10%{top:-212px;}
+	15%{top:-318px;}
+	20%{top:-424px;}
+	25%{top:-530px;}
+	30%{top:-636px;}
+	35%{top:-742px;}
+	40%{top:-848px;}
+	45%{top:-954px;}
+	50%{top:-1060px;}
+	55%{top:-1166px;}
+	60%{top:-1272px;}
+	65%{top:-1378px;}
+	70%{top:-1482px;}
+	75%{top:-1590px;}
+	80%{top:-1696px;}
+	85%{top:-1802px;}
+	90%{top:-1908px;}
+	95%{top:-2014px;}
+	100%{top:-2140px;}  
+}
+
