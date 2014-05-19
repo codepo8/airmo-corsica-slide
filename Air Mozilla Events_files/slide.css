@@ -1,7 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600italic,700);
 body {
 	background-image: url("./FirefoxBkg.gif");
 	background-size: 100vw 100vh;
 	background-position: left top;
+	font-family: 'open sans',sans-serif;
 }
 
 
@@ -27,7 +29,7 @@ strong {
 	margin-left: 0;
 	background-color: transparent;
 	color: rgb(0,0,0);
-	font-family: MetaBold,Trebuchet MS,sans-serif;
+	font-family: 'open sans',MetaBold,Trebuchet MS,sans-serif;
 	font-size: 8vh;
 	font-weight: 700;
 	text-align: center;
